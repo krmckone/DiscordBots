@@ -40,11 +40,7 @@ async def on_message(message):
 
 @kwajBot.event
 async def on_member_update(memberBefore, memberAfter):
-    for server in kwajBot.servers:
-        if server.name == "kwaj server":
-            for channel in server.channels:
-                if channel.name == "the_second_fuckling":
-                    currentChannel = channel
-    await kwajBot.send_message(currentChannel, f"{memberBefore.mention} the bitch was {memberBefore.status} and now {memberAfter.status}!")
+    currentChannel = kwajBot.get_channel("204728912209641472")
+    await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, the bitch, was {memberBefore.status} and now {memberAfter.status}!")
 
 kwajBot.run('MzM0MTQ0MjE4NjA2MDc1OTA2.DE7buQ.4jL9Lo1Nr1S1mEQ3GS74pUzjla4')
