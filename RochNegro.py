@@ -38,9 +38,24 @@ async def on_message(message):
             else:
                 await kwajBot.send_message(message.channel, "{0}, ur a big bitch!".format(member.mention))
 
+
+
+#Gives updates on status changes and when players get on games
 @kwajBot.event
 async def on_member_update(memberBefore, memberAfter):
     currentChannel = kwajBot.get_channel("204728912209641472")
-    await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, the bitch, was {memberBefore.status} and now {memberAfter.status}!")
+    if memberBefore.status != memberAfter.status:
+        await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, the bitch, was {memberBefore.status} and now {memberAfter.status}!")
+    else:
+        pass
+    if memberBefore.game == None and memberAfter.game != None:
+        await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, the bitch, got on {memberAfter.game.name}")
+    if memberAfter.game == None and memberBefore.game != None:
+        await kwajBot.send_message(currentChannel, f"{memberAfter.mention}, the bitch, got off {memberBefore.game.name}")
+
+
+
+
+
 
 kwajBot.run('MzM0MTQ0MjE4NjA2MDc1OTA2.DE7buQ.4jL9Lo1Nr1S1mEQ3GS74pUzjla4')
