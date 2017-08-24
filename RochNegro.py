@@ -5,6 +5,8 @@ import asyncio
 kwajBot = discord.Client()
 
 
+
+
 @kwajBot.event
 async def on_ready():
     print('Logged in as')
@@ -13,6 +15,9 @@ async def on_ready():
     print(kwajBot.user.mention)
     print('------')
     await kwajBot.change_presence(game=discord.Game(name='FSU!!!!!'))
+    await kwajBot.send_message(kwajBot.get_channel("204728912209641472"), "KWAJ BOT IS ONLINE >:o")
+
+
 
 @kwajBot.event
 async def on_message(message):
@@ -28,9 +33,7 @@ async def on_message(message):
     if message.content.startswith("!bitch"):
         await kwajBot.send_message(message.channel, "{0}, ur a bitch".format(message.author.mention))
     if message.content.startswith('!everyoneBitch'):
-        serverIter = kwajBot.servers
-        serverList = list(serverIter)
-        currentServer = serverList[0]
+        currentServer = "204728912209641472"
         currentMembers = currentServer.members
         for member in currentMembers:
             if member.mention == currentServer.get_member(kwajBot.user.id).mention:
@@ -55,7 +58,7 @@ async def on_member_update(memberBefore, memberAfter):
 
 
 
-
-
-
 kwajBot.run('MzM0MTQ0MjE4NjA2MDc1OTA2.DE7buQ.4jL9Lo1Nr1S1mEQ3GS74pUzjla4')
+
+
+
