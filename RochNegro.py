@@ -21,25 +21,25 @@ async def on_ready():
 
 @kwajBot.event
 async def on_message(message):
-    if message.content.startswith('!Is josh a negro?'):
+    if message.content.startswith('!Is josh a good friend?'):
         await kwajBot.send_message(message.channel, 'Yes!')
-    if message.content.startswith("!WhoIsNegro?"):
-        await kwajBot.send_message(message.channel, "Josh is the big 'ol freakin negro!")
-    if message.content.startswith("!WhoIsFuklur?"):
-        await kwajBot.send_message(message.channel, "NATE IS THE FUKLUR!")
+    if message.content.startswith("!WhoIsTheBestFriend?"):
+        await kwajBot.send_message(message.channel, "Josh is the big 'ol best friend!")
+    if message.content.startswith("!WhoIsNate?"):
+        await kwajBot.send_message(message.channel, "Nate is also one of the best friends!")
 
     if message.content.startswith("!hello"):
         await kwajBot.send_message(message.channel, "{0}, hello".format(message.author.mention))
-    if message.content.startswith("!bitch"):
-        await kwajBot.send_message(message.channel, "{0}, ur a bitch".format(message.author.mention))
-    if message.content.startswith('!everyoneBitch'):
+    if message.content.startswith("!friend"):
+        await kwajBot.send_message(message.channel, "{0}, you're a good friend".format(message.author.mention))
+    if message.content.startswith('!everyoneFriend'):
         currentServer = "204728912209641472"
         currentMembers = currentServer.members
         for member in currentMembers:
             if member.mention == currentServer.get_member(kwajBot.user.id).mention:
                 pass
             else:
-                await kwajBot.send_message(message.channel, "{0}, ur a big bitch!".format(member.mention))
+                await kwajBot.send_message(message.channel, "{0}, you're a great friend!".format(member.mention))
 
 
 
@@ -48,13 +48,13 @@ async def on_message(message):
 async def on_member_update(memberBefore, memberAfter):
     currentChannel = kwajBot.get_channel("204728912209641472")
     if memberBefore.status != memberAfter.status:
-        await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, the bitch, was {memberBefore.status} and now {memberAfter.status}!")
+        await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, our friend, was {memberBefore.status} and now {memberAfter.status}!")
     else:
         pass
     if memberBefore.game == None and memberAfter.game != None:
-        await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, the bitch, got on {memberAfter.game.name}")
+        await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, our friend, got on {memberAfter.game.name}")
     if memberAfter.game == None and memberBefore.game != None:
-        await kwajBot.send_message(currentChannel, f"{memberAfter.mention}, the bitch, got off {memberBefore.game.name}")
+        await kwajBot.send_message(currentChannel, f"{memberAfter.mention}, our friend, got off {memberBefore.game.name}")
 
 
 
