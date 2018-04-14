@@ -55,10 +55,3 @@ async def on_member_update(memberBefore, memberAfter):
         await kwajBot.send_message(currentChannel, f"{memberBefore.mention}, our friend, got on {memberAfter.game.name}")
     if memberAfter.game == None and memberBefore.game != None:
         await kwajBot.send_message(currentChannel, f"{memberAfter.mention}, our friend, got off {memberBefore.game.name}")
-
-
-
-kwajBot.run('MzM0MTQ0MjE4NjA2MDc1OTA2.DE7buQ.4jL9Lo1Nr1S1mEQ3GS74pUzjla4')
-
-
-
