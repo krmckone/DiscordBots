@@ -38,7 +38,6 @@ async def on_message(message):
         seth = server.get_member("192844733746380801")
         await bigHoss.send_message(message.channel, "{0}, you're a lil bich".format(seth.mention))
 
-bigHoss.run('Mzg2Mjk4NjI4NjU1OTM5NTg3.DZXArA._dJBK8n8aij6c2h03XQfvkUs5AQ')
 
 
 
